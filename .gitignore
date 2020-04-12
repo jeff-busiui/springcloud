@@ -1,0 +1,8 @@
+node_modules
+.history
+.svn
+.git
+.idea
+target
+*.iml
+dist
