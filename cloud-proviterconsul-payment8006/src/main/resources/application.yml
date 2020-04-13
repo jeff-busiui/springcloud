@@ -1,0 +1,18 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: order-proviterconsul-payment
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}
+        register-health-check: true #健康检查，保证服务处于启动状态，建议开启
+        healthCheckInterval: 15s
+        health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
+    #inetutils:
+        #  preferred-networks:
+      #   172.18.107.1

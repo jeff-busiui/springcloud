@@ -5,6 +5,8 @@ import com.atguigu.springcloud.entities.Payment;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.apache.bcel.Repository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,5 +41,11 @@ public class OrderController {
     @GetMapping(value="/consumer/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@ApiParam(required = true, name = "id", value = "订单id") @PathVariable Long id) {
         return restTemplate.getForObject(URL+"/payment/get/"+id,CommonResult.class);
+    }
+
+    @GetMapping(value="/consumer/payment/getEntity/{id}")
+    public CommonResult<Payment> getPaymentByIdEnt(@PathVariable Long id){
+        ResponseEntity<CommonResult> repository =  restTemplate.getForEntity(URL+"/payment/get/"+id,CommonResult.class);
+        return repository.getBody();
     }
 }
