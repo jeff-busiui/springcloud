@@ -31,6 +31,8 @@ public class OrderController {
     @PostMapping(value = "/consumer/payment/create")
     @ApiOperation(value = "用户下单", notes = "用户下单的接口")
     public CommonResult<Payment> create(@ApiParam(required = true, name = "payment", value = "下单的信息") Payment payment) {
+        log.info("====================");
+        log.info(payment.toString());
         return restTemplate.postForObject(URL + "/payment/create", payment, CommonResult.class);
     }
 
