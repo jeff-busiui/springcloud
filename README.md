@@ -76,3 +76,9 @@ Node          Address          Status  Type    Build  Protocol  DC   Segment
 8cba36da0384  172.17.0.7:8301  alive   server  1.6.2  2         dc1  <all>
 6.通过访问8500/8501/8502端口查看web界面
 我是在阿里云上,记得开放安全端口
+
+
+------集成feign----------------------------
+1.main方法上增加@EnableFeignCliends
+2.service方法增加FeignClient
+3.service上的GetMapper必须要要调用的服务类上的路径一致
