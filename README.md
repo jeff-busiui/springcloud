@@ -82,3 +82,9 @@ Node          Address          Status  Type    Build  Protocol  DC   Segment
 1.main方法上增加@EnableFeignCliends
 2.service方法增加FeignClient
 3.service上的GetMapper必须要要调用的服务类上的路径一致
+
+
+# 2020-04-15
+------集成hystrix-------------
+1.main方法上增加@EnableHystrix注解
+2.controller的方法上增加HystrixCommand

@@ -10,6 +10,24 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
 
+  instance:
+    instance-id: orderfeign80
+    prefer-ip-address: true
+    # 客户端向服务端发送心跳的时间，默认30S
+    lease-renewal-interval-in-seconds: 1
+    # eureka服务端收到最后一次心跳等待的时间,默认90S
+    lease-expiration-duration-in-seconds: 2
+
 spring:
   application:
     name: cloud-orderfeign-service
+
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.atguigu.springcloud.service.OrderFeignService: debug
+
+#开启feign的hytrix的机制
+feign:
+  hystrix:
+    enabled: true
