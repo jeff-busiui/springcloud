@@ -32,14 +32,17 @@ public class OrderFeignController {
 
     @GetMapping(value="/consumer/payment/hytrix/get_ok")
     public String getPaymentHystrix_ok(){
+        log.info("======================调用了getPaymentHystrix_ok=================");
         return orderFeignService.getPaymentHystrix_ok();
     }
 
     @GetMapping(value="/consumer/payment/hytrix/get_error")
     public String getPaymentHystrix_error(){
+
+        log.info("======================调用了=================");
+
         return orderFeignService.getPaymentHystrix_error();
     }
-
 
     public String getPaymentHystrix_error_fallback(){
         return "我来救你了！！！！";

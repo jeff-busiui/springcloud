@@ -21,7 +21,6 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-@EnableSwagger2
 public class PaymentController {
 
     @Resource

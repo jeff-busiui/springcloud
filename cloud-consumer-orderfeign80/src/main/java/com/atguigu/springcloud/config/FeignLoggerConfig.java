@@ -13,6 +13,6 @@ public class FeignLoggerConfig {
 
     @Bean
     public Logger.Level getFeignLoggerLevel(){
-        return Logger.Level.FULL;
+        return Logger.Level.NONE;
     }
 }
