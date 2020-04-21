@@ -22,6 +22,12 @@
         <module>cloud-consumer-orderfeign80</module>
         <module>cloud-provider-payment-hystrix8001</module>
         <module>cloud-jar-common</module>
+        <module>cloud-payment-hsytrix-dashbond9001</module>
+        <module>cloud-consumer-hystrix-dashboard9001</module>
+        <module>cloud-getway-getway9527</module>
+        <module>cloud-config-center-3344</module>
+        <module>cloud-config-client-3355</module>
+        <module>cloud-config-client-3366</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -118,6 +124,14 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
+
+            <!-- cloud-api-common -->
+            <dependency>
+                <groupId>com.atguigu.springcloud</groupId>
+                <artifactId>cloud-api-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

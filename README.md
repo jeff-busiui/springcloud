@@ -88,3 +88,9 @@ Node          Address          Status  Type    Build  Protocol  DC   Segment
 ------集成hystrix-------------
 1.main方法上增加@EnableHystrix注解
 2.controller的方法上增加HystrixCommand
+
+
+# 2020-04-16
+1.springcloud-bus
+2.阿里云的rabbitMQ必须 开放15672 5672两个端口
+curl -X POST http://eureka7001.com:3344/actuator/bus-refresh

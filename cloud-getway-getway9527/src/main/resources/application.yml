@@ -1,0 +1,36 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-getway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: payment_routh #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001   #匹配后提供服务的路由地址
+          uri: lb://CLOUD-PAYMENT-SERVICE #匹配后提供服务的路由地址
+          predicates:
+            - Path=/payment/get/lb/**
+            # 断言，路径相匹配的进行路由 After
+            # - After=2020-04-17T11:32:31.361+08:00[Asia/Shanghai]
+            #- Before =2020-04-27T10:32:31.361+08:00[Asia/Shanghai]
+
+
+eureka:
+  client:
+    #表示是否将自己注册进EurekaServer默认为true。
+    register-with-eureka: true
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetchRegistry: true
+    service-url:
+      #单机版
+      defaultZone: http://eureka7001.com:7001/eureka
+      #集群版
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: getway9527
+    prefer-ip-address: true
