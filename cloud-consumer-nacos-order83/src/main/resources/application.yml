@@ -1,0 +1,13 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: alibaba-order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+server-url:
+  nacos-user-service: http://alibaba-payment-service

@@ -22,7 +22,6 @@
         <module>cloud-consumer-orderfeign80</module>
         <module>cloud-provider-payment-hystrix8001</module>
         <module>cloud-jar-common</module>
-        <module>cloud-payment-hsytrix-dashbond9001</module>
         <module>cloud-consumer-hystrix-dashboard9001</module>
         <module>cloud-getway-getway9527</module>
         <module>cloud-config-center-3344</module>
@@ -31,6 +30,14 @@
         <module>cloud-stream-rabbitmq-provider8801</module>
         <module>cloud-stream-rabbitmq-consumer8802</module>
         <module>cloud-stream-rabbitmq-consumer8803</module>
+        <module>cloud-provider-nacos-payment9001</module>
+        <module>cloud-provider-nacos-payment9001</module>
+        <module>cloud-consumer-nacos-order83</module>
+        <module>cloud-config-nacos-84</module>
+        <module>cloud-alibaba-sentinel</module>
+        <module>seata-order-service2001</module>
+        <module>seata-account-service2003</module>
+        <module>seata-storage-service2002</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -69,6 +76,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+
             <!--spring cloud alibaba 2.1.0.RELEASE-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -133,6 +142,14 @@
                 <groupId>com.atguigu.springcloud</groupId>
                 <artifactId>cloud-api-common</artifactId>
                 <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+
+            <!-- sentinel 和nacos进行持久化集成 -->
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-datasource-nacos</artifactId>
+                <version>1.7.2</version>
             </dependency>
 
 

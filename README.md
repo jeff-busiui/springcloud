@@ -94,3 +94,7 @@ Node          Address          Status  Type    Build  Protocol  DC   Segment
 1.springcloud-bus
 2.阿里云的rabbitMQ必须 开放15672 5672两个端口
 curl -X POST http://eureka7001.com:3344/actuator/bus-refresh
+
+# 2020-04-26
+1.sentinel 配置的blockHandler的方法， 一直不生效？？
+1.sentinel 配置的fallback的方法， 一直不生效？？

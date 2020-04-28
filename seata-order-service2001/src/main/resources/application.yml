@@ -1,0 +1,31 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alibaba:
+      seata:
+        tx-service-group: fsp_tx_group
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://rm-8vbe1dd5kbgt59z3wbo.mysql.zhangbei.rds.aliyuncs.com:3306/seata_order?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: alyun_root
+    password: alyun_root
+
+feign:
+  hystrix:
+    enabled: false
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml

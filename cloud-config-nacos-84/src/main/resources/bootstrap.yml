@@ -1,0 +1,16 @@
+server:
+  port: 84
+
+spring:
+  application:
+    name: cloud-config-nacos
+  cloud:
+    nacos:
+      config:
+        group: DEFAULT_GROUP
+        namespace: DEV
+        server-addr: localhost:8848 #Nacos服务注册中心地址
+        file-extension: yaml
+      discovery:
+        server-addr: localhost:8848 #Nacos服务注册中心地址
+

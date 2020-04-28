@@ -1,0 +1,9 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: alibaba-payment-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
